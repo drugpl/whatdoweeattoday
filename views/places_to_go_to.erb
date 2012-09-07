@@ -19,7 +19,8 @@
 
 <script type="text/javascript">
   (function() {
-    var origin = new google.maps.LatLng(51.105769, 17.032092);
+   function showMap(position) {
+    var origin = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     var destination = new google.maps.LatLng(<%= @item.lat %>, <%= @item.lng %>);
 
     var mapDiv = document.getElementById('map');
@@ -54,5 +55,8 @@
         map.setCenter(destination);
       }
     });
+  }
+
+    navigator.geolocation.getCurrentPosition(showMap);
   })();
 </script>
