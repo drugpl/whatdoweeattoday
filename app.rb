@@ -14,7 +14,7 @@ configure(:development) do |c|
 end
 
 configure(:production) do |c|
-  set :server_url, 'http://whatdoweeattoday.llp.pl'
+  set :server_url, 'http://whatdoesinkeattoday.herokuapp.com'
 end
 
 DATA = YAML.load(File.read('config/data.yml'))
